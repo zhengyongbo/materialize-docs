@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="description" content="Materialize is a modern responsive CSS framework based on Material Design by Google. ">
-    <title>Documentation - Materialize</title>
+    <title>Buttons - Materialize</title>
     <!-- Favicons-->
     <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -31,7 +31,12 @@
   </head>
   <body>
     <header>
-      <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
+      <nav class="top-nav">
+        <div class="container">
+          <div class="nav-wrapper"><a class="page-title">Buttons</a></div>
+        </div>
+      </nav>
+      <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
       <ul id="nav-mobile" class="side-nav fixed">
         <li class="logo"><a id="logo-container" href="http://materializecss.com/" class="brand-logo">
             <object id="front-page-logo" type="image/svg+xml" data="res/materialize.svg">Your browser does not support SVG</object></a></li>
@@ -53,11 +58,11 @@
                 </ul>
               </div>
             </li>
-            <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Components</a>
+            <li class="bold"><a class="collapsible-header active waves-effect waves-teal">Components</a>
               <div class="collapsible-body">
                 <ul>
                   <li><a href="badges.html">Badges</a></li>
-                  <li><a href="buttons.html">Buttons</a></li>
+                  <li class="active"><a href="buttons.html">Buttons</a></li>
                   <li><a href="cards.html">Cards</a></li>
                   <li><a href="chips.html">Chips</a></li>
                   <li><a href="collections.html">Collections</a></li>
@@ -95,90 +100,135 @@
         <li class="bold"><a href="showcase.html" class="waves-effect waves-teal">Showcase</a></li>
       </ul>
     </header>
-    <main>
-      <div class="section no-pad-bot" id="index-banner">
-        <div class="container">
-          <h1 class="header center-on-small-only">Materialize</h1>
-          <div class='row center'>
-            <h4 class ="header col s12 light center">A modern responsive front-end framework based on Material Design</h4>
-          </div>
-          <div class="row center">
-            <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light">Get Started</a>
-          </div>
-          <div class="row center"><a class="red-text text-lighten-4" href="https://github.com/Dogfalo/materialize">alpha release v0.97.0</a></div>
+    <main><div class="container">
+  <div class="row">
 
-          <div class="buysellads-header row center">
-            <!-- CarbonAds Zone Code -->
-            <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=materializecss" id="_carbonads_js"></script>
-          </div>
-          <br>
+    <div class="col s12 m9 l10">
+      <div id="raised" class="section scrollspy">
+        <p class="caption">
+        There are 3 main button types described in material design. The raised button is a standard button that signify actions and seek to give depth to a mostly flat page. The floating circular action button is meant for very important functions. Flat buttons are usually used within elements that already have depth like cards or modals.
+        </p>
+        <h2 class="header">Raised</h2>
+        <a class="waves-effect waves-light btn">button</a>
+        <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>button</a>
+        <a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>button</a>
+        <pre><code class="language-markup col s12">
+&lt;a class="waves-effect waves-light btn">Stuff&lt;/a>
+&lt;a class="waves-effect waves-light btn">&lt;i class="material-icons left">cloud&lt;/i>button&lt;/a>
+&lt;a class="waves-effect waves-light btn">&lt;i class="material-icons right">cloud&lt;/i>button&lt;/a>
+        </code></pre>
+      </div>
+      <div id="floating" class="section scrollspy">
+        <h2 class="header">Floating</h2>
+        <a class="btn-floating waves-effect waves-light btn-large red"><i class="material-icons">add</i></a><br><br>
+        <pre><code class="language-markup col s12">
+  &lt;a class="btn-floating btn-large waves-effect waves-light red">&lt;i class="material-icons">add</i>&lt;/i>&lt;/a>
+        </code></pre>
+        <br>
 
-        </div>
-        <div class="github-commit">
-          <div class="container">
-            <div class="commit">
-              Latest Commit on Github:
-              &nbsp;&nbsp;
-              <a href="" class="sha"></a>
-              &nbsp;&nbsp;
-              <span class="date"></span>
-              <a id="github-button" href="https://github.com/Dogfalo/materialize" class="btn-flat right grey-text text-lighten-5 waves-effect waves-light hide-on-small-only">Github</a>
-            </div>
-          </div>
+        <h4 class="light">Fixed Action Button</h4>
+        <p>If you want a fixed floating action button, you can add multiple actions that will appear on hover. Our demo is in the bottom righthand corner of the page.</p>
+        <pre><code class="language-markup col s12">
+  &lt;div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    &lt;a class="btn-floating btn-large red">
+      &lt;i class="large material-icons">mode_edit&lt;/i>
+    &lt;/a>
+    &lt;ul>
+      &lt;li>&lt;a class="btn-floating red">&lt;i class="material-icons">insert_chart&lt;/i>&lt;/i>&lt;/a>&lt;/li>
+      &lt;li>&lt;a class="btn-floating yellow darken-1">&lt;i class="material-icons">format_quote&lt;/i>&lt;/a>&lt;/li>
+      &lt;li>&lt;a class="btn-floating green">&lt;i class="material-icons">publish&lt;/i>&lt;/a>&lt;/li>
+      &lt;li>&lt;a class="btn-floating blue">&lt;i class="material-icons">attach_file&lt;/i>&lt;/a>&lt;/li>
+    &lt;/ul>
+  &lt;/div>
+        </code></pre>
+
+        <p>You can also open the Fixed Action Button Menu programatically, the below code will make your FAB Menu open:</p>
+          <pre><code class="language-javascript">
+  $('.fixed-action-btn').openFAB();
+          </code></pre>
+          <p>You can also close them programatically:</p>
+          <pre><code class="language-javascript">
+  $('.fixed-action-btn').closeFAB();
+        </code></pre>
+
+        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+          <a class="btn-floating btn-large red">
+            <i class="material-icons">mode_edit</i>
+          </a>
+          <ul>
+            <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+            <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+          </ul>
         </div>
       </div>
+      <div id="flat" class="section scrollspy">
+        <h2 class="header">Flat</h2>
+        <a class="waves-effect waves-teal btn-flat">Button</a>
+        <pre><code class="language-markup col s12">
+  &lt;a class="waves-effect waves-teal btn-flat">Button&lt;/a>
+        </code></pre>
+      </div>
+      <div id="submit" class="section scrollspy">
+        <h2 class="header">Submit Button</h2>
+        <p>When you use a button to submit a form, instead of using a input tag, use a button tag with a type submit</p>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
+        <pre><code class="language-markup">
+  &lt;button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    &lt;i class="material-icons right">send</i>&lt;/i>
+  &lt;/button>
+        </code></pre>
+      </div>
+      <div id="large" class="section scrollspy">
+        <h2 class="header">Large</h2>
+        <p>This button has a larger height for buttons that need more attention.</p>
+        <a class="waves-effect waves-light btn-large">Button</a>
+        <a class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>button</a>
+        <a class="waves-effect waves-light btn-large"><i class="material-icons right">cloud</i>button</a>
+        <pre><code class="language-markup col s12">
+&lt;a class="waves-effect waves-light btn-large">Button&lt;/a>
+&lt;a class="waves-effect waves-light btn-large">&lt;i class="material-icons left">&lt;/i>button&lt;/a>
+&lt;a class="waves-effect waves-light btn-large">&lt;i class="material-icons right">cloud</i>&lt;/i>button&lt;/a>
+        </code></pre>
+      </div>
+      <div id="disabled" class="section scrollspy">
+        <h2 class="header">Disabled</h2>
+        <p>This style can be applied to all button types</p>
+        <a class="btn-large disabled">Button</a>
+        <a class="btn disabled">Button</a>
+        <a class="btn-flat disabled">Button</a>
+        <a class="btn-floating disabled"><i class="material-icons">add</i></a>
+        <pre><code class="language-markup col s12">
+&lt;a class="btn-large disabled">Button&lt;/a>
+&lt;a class="btn disabled">Button&lt;/a>
+&lt;a class="btn-flat disabled">Button&lt;/a>
+&lt;a class="btn-floating disabled">&lt;i class="material-icons">add&lt;/i>&lt;/a>
+        </code></pre>
+      </div>
 
-      <div class="container">
-        <div class="section">
+    </div>
 
-          <div class="row">
-            <div class="col s12 m8 offset-m2">
-              <br>
-              <img id="responsive-img" src="images/responsive.png">
-            </div>
-          </div>
-
-          <div class="row">
-            <h3 class="col s12 light center header">Materialize simplifies life for developers and the users they serve.</h3>
-          </div>
-
-          <!--   Promo Section   -->
-          <div class="row">
-            <div class="col s12 m4">
-              <div class="center promo">
-                <i class="material-icons">flash_on</i>
-                <p class="promo-caption">Speeds up development</p>
-                <p class="light center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-              </div>
-            </div>
-
-            <div class="col s12 m4">
-              <div class="center promo">
-                <i class="material-icons">group</i>
-                <p class="promo-caption">User Experience Focused</p>
-                <p class="light center">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-              </div>
-            </div>
-
-            <div class="col s12 m4">
-              <div class="center promo">
-                <i class="material-icons">settings</i>
-                <p class="promo-caption">Easy to work with</p>
-                <p class="light center">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-              </div>
-            </div>
-          </div>
-
+    <div class="col hide-on-small-only m3 l2">
+      <div class="toc-wrapper">
+        <div class="buysellads hide-on-small-only">
+           
         </div>
-        <div class="divider"></div>
-        <div class="section">
-          <div class="row center">
-            <h3 class="light header">Materialize Showcase</h3>
-            <p class="col s8 offset-s2 caption">Checkout what people are creating with Materialize. Get inspired by these beautiful sites and you can even submit your own website to be showcased here.</p>
-            <a href="http://materializecss.com/showcase.html" class="btn-large waves-effect waves-light">Explore our Showcase</a>
-          </div>
+        <div style="height: 1px;">
+          <ul class="section table-of-contents">
+            <li><a href="#raised">Raised</a></li>
+            <li><a href="#floating">Floating</a></li>
+            <li><a href="#flat">Flat</a></li>
+            <li><a href="#submit">Submit</a></li>
+            <li><a href="#large">Large</a></li>
+            <li><a href="#disabled">Disabled</a></li>
+          </ul>
         </div>
       </div>
+    </div>
+
+  </div>
+</div>
 
 
     </main>    <footer class="page-footer">

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="description" content="Materialize is a modern responsive CSS framework based on Material Design by Google. ">
-    <title>Documentation - Materialize</title>
+    <title>Helpers - Materialize</title>
     <!-- Favicons-->
     <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -31,7 +31,12 @@
   </head>
   <body>
     <header>
-      <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
+      <nav class="top-nav">
+        <div class="container">
+          <div class="nav-wrapper"><a class="page-title">Helpers</a></div>
+        </div>
+      </nav>
+      <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
       <ul id="nav-mobile" class="side-nav fixed">
         <li class="logo"><a id="logo-container" href="http://materializecss.com/" class="brand-logo">
             <object id="front-page-logo" type="image/svg+xml" data="res/materialize.svg">Your browser does not support SVG</object></a></li>
@@ -39,12 +44,12 @@
         <li class="bold"><a href="getting-started.html" class="waves-effect waves-teal">Getting Started</a></li>
         <li class="no-padding">
           <ul class="collapsible collapsible-accordion">
-            <li class="bold"><a class="collapsible-header  waves-effect waves-teal">CSS</a>
+            <li class="bold"><a class="collapsible-header active waves-effect waves-teal">CSS</a>
               <div class="collapsible-body">
                 <ul>
                   <li><a href="color.html">Color</a></li>
                   <li><a href="grid.html">Grid</a></li>
-                  <li><a href="helpers.html">Helpers</a></li>
+                  <li class="active"><a href="helpers.html">Helpers</a></li>
                   <li><a href="media-css.html">Media</a></li>
                   <li><a href="sass.html">Sass</a></li>
                   <li><a href="shadow.html">Shadow</a></li>
@@ -95,91 +100,173 @@
         <li class="bold"><a href="showcase.html" class="waves-effect waves-teal">Showcase</a></li>
       </ul>
     </header>
-    <main>
-      <div class="section no-pad-bot" id="index-banner">
-        <div class="container">
-          <h1 class="header center-on-small-only">Materialize</h1>
-          <div class='row center'>
-            <h4 class ="header col s12 light center">A modern responsive front-end framework based on Material Design</h4>
-          </div>
-          <div class="row center">
-            <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light">Get Started</a>
-          </div>
-          <div class="row center"><a class="red-text text-lighten-4" href="https://github.com/Dogfalo/materialize">alpha release v0.97.0</a></div>
+    <main><div class="container">
+  <div class="row">
 
-          <div class="buysellads-header row center">
-            <!-- CarbonAds Zone Code -->
-            <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=materializecss" id="_carbonads_js"></script>
-          </div>
+    <div class="col s12 m9 l10">
+
+      <!--  Valign Section-->
+      <div id="valign" class="section scrollspy">
+        <h2 class="header">Alignment</h2>
+        <p class="caption">We have easy to use classes to help you align your content.</p>
+
+        <h5 class="light">Vertical Align</h5>
+        <p>You can easily vertically center things by adding the class <code class="language-markup">valign-wrapper</code> to the container holding the items you want to vertically align.</p>
+        <div class="valign-demo valign-wrapper">
+          <h5 class="valign center" style="width: 100%;">This should be vertically aligned</h5>
+        </div>
+        <pre><code class="language-markup">
+&lt;div class="valign-wrapper">
+  &lt;h5 class="valign">This should be vertically aligned&lt;/h5>
+&lt;/div>
+        </code></pre><br>
+
+        <h5 class="light">Text Align</h5>
+        <p>These classes are for horizontally aligning content. We have <code class="language-markup">.left-align</code>, <code class="language-markup">.right-align</code> and <code class="language-markup">.center-align</code></p>
+        <div class="talign-demo">
           <br>
-
+          <h5 class="left-align">This should be left aligned</h5>
         </div>
-        <div class="github-commit">
-          <div class="container">
-            <div class="commit">
-              Latest Commit on Github:
-              &nbsp;&nbsp;
-              <a href="" class="sha"></a>
-              &nbsp;&nbsp;
-              <span class="date"></span>
-              <a id="github-button" href="https://github.com/Dogfalo/materialize" class="btn-flat right grey-text text-lighten-5 waves-effect waves-light hide-on-small-only">Github</a>
+        <br>
+        <div class="talign-demo">
+          <br>
+          <h5 class="right-align">This should be right aligned</h5>
+        </div>
+        <br>
+        <div class="talign-demo">
+          <br>
+          <h5 class="center-align">This should be center aligned</h5>
+        </div>
+        <pre><code class="language-markup">
+  &lt;div>
+    &lt;h5 class="left-align">This should be left aligned&lt;/h5>
+  &lt;/div>
+  &lt;div>
+    &lt;h5 class="right-align">This should be right aligned&lt;/h5>
+  &lt;/div>
+  &lt;div>
+    &lt;h5 class="center-align">This should be center aligned&lt;/h5>
+  &lt;/div>
+        </code></pre><br>
+
+        <h5 class="light">Quick Floats</h5>
+        <p>Quickly float things by adding the class <code class="language-markup">left</code> or <code class="language-markup">right</code> to the element. <code class="language-markup">!important</code> is used to avoid specificity issues.</p>
+        <pre><code class="language-markup">
+&lt;div class="left">...&lt;/div>
+&lt;div class="right">...&lt;/div>
+        </code></pre><br>
+
+      </div><!--  End Valign Section  -->
+
+      <!--  Hiding Section-->
+      <div id="hiding" class="section scrollspy">
+        <h2 class="header">Hiding Content</h2>
+        <p>We provide easy to use classes to hide content on specific screen sizes. </p>
+        <table class="striped">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Screen Range</th>
+            </tr>
+          </thead>
+            <tbody>
+            <tr>
+              <td><code class="language-markup"><strong>.hide</strong></code></td>
+              <td>Hidden for all Devices</td>
+            </tr>
+            <tr>
+              <td><code class="language-markup"><strong>.hide-on-small-only</strong></code></td>
+              <td>Hidden for Mobile Only</td>
+            </tr>
+            <tr>
+              <td><code class="language-markup"><strong>.hide-on-med-only</strong></code></td>
+              <td>Hidden for Tablet Only</td>
+            </tr>
+            <tr>
+              <td><code class="language-markup"><strong>.hide-on-med-and-down</strong></code></td>
+              <td>Hidden for Tablet and Below</td>
+            </tr>
+            <tr>
+              <td><code class="language-markup"><strong>.hide-on-med-and-up</strong></code></td>
+              <td>Hidden for Tablet and Above</td>
+            </tr>
+            <tr>
+              <td><code class="language-markup"><strong>.hide-on-large-only</strong></code></td>
+              <td>Hidden for Desktop Only</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <h5 class="light">Usage</h5>
+        <pre><code class="language-markup">
+  &lt;div class="hide-on-small-only">&lt;/div>
+        </code></pre><br>
+
+      </div><!--  End Hiding Section  -->
+
+
+
+      <!--  Formatting Section-->
+      <div id="formatting" class="section scrollspy">
+        <h2 class="header">Formatting</h2>
+        <p>These classes help format various content on your site.</p>
+
+        <h5 class="light">Truncation</h5>
+        <p>To truncate long lines of text in an ellipsis, add the class <code class="language-markup">truncate</code> to the tag which contains the text. See an example below of a header being truncated inside a card.</p>
+
+        <div class="row">
+          <div class="col s6 offset-s3 m6 offset-m3">
+            <div class="card-panel">
+              <h4 class="truncate">This is an extremely long title that will be truncated</h4>
             </div>
           </div>
+        </div>
+
+        <pre><code class="language-markup">
+  &lt;h4 class="truncate">This is an extremely long title that will be truncated&lt;/h4>
+        </code></pre><br>
+
+        <h5 class="light">Hover</h5>
+        <p>The <code class="language-markup">hoverable</code> is a hover class that adds an animation for box shadow as seen below. It can be used on most elements, but meant for use on cards.</p>
+        <div class="card hoverable small">
+          <div class="card-image">
+            <img src="images/sample-1.jpg">
+            <span class="card-title">Card Title</span>
+          </div>
+          <div class="card-content">
+            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+          </div>
+          <div class="card-action">
+            <a href="#">This is a link</a>
+          </div>
+        </div>
+
+        <pre><code class="language-markup">
+  &lt;div class="card-panel hoverable"> Hoverable Card Panel&lt;/div>
+        </code></pre>
+
+      </div><!--  End Formatting Section  -->
+
+
+    </div>
+
+    <div class="col hide-on-small-only m3 l2">
+      <div class="toc-wrapper">
+        <div class="buysellads hide-on-small-only">
+           
+        </div>
+        <div style="height: 1px;">
+          <ul class="section table-of-contents">
+            <li><a href="#valign">Alignment</a></li>
+            <li><a href="#hiding">Hiding Content</a></li>
+            <li><a href="#formatting">Formatting</a></li>
+          </ul>
         </div>
       </div>
+    </div>
 
-      <div class="container">
-        <div class="section">
-
-          <div class="row">
-            <div class="col s12 m8 offset-m2">
-              <br>
-              <img id="responsive-img" src="images/responsive.png">
-            </div>
-          </div>
-
-          <div class="row">
-            <h3 class="col s12 light center header">Materialize simplifies life for developers and the users they serve.</h3>
-          </div>
-
-          <!--   Promo Section   -->
-          <div class="row">
-            <div class="col s12 m4">
-              <div class="center promo">
-                <i class="material-icons">flash_on</i>
-                <p class="promo-caption">Speeds up development</p>
-                <p class="light center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-              </div>
-            </div>
-
-            <div class="col s12 m4">
-              <div class="center promo">
-                <i class="material-icons">group</i>
-                <p class="promo-caption">User Experience Focused</p>
-                <p class="light center">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-              </div>
-            </div>
-
-            <div class="col s12 m4">
-              <div class="center promo">
-                <i class="material-icons">settings</i>
-                <p class="promo-caption">Easy to work with</p>
-                <p class="light center">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <div class="divider"></div>
-        <div class="section">
-          <div class="row center">
-            <h3 class="light header">Materialize Showcase</h3>
-            <p class="col s8 offset-s2 caption">Checkout what people are creating with Materialize. Get inspired by these beautiful sites and you can even submit your own website to be showcased here.</p>
-            <a href="http://materializecss.com/showcase.html" class="btn-large waves-effect waves-light">Explore our Showcase</a>
-          </div>
-        </div>
-      </div>
-
+  </div>
+</div>
 
     </main>    <footer class="page-footer">
       <div class="container">

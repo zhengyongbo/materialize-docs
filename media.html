@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="description" content="Materialize is a modern responsive CSS framework based on Material Design by Google. ">
-    <title>Documentation - Materialize</title>
+    <title>Media - Materialize</title>
     <!-- Favicons-->
     <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -31,7 +31,12 @@
   </head>
   <body>
     <header>
-      <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
+      <nav class="top-nav">
+        <div class="container">
+          <div class="nav-wrapper"><a class="page-title">Media</a></div>
+        </div>
+      </nav>
+      <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
       <ul id="nav-mobile" class="side-nav fixed">
         <li class="logo"><a id="logo-container" href="http://materializecss.com/" class="brand-logo">
             <object id="front-page-logo" type="image/svg+xml" data="res/materialize.svg">Your browser does not support SVG</object></a></li>
@@ -70,13 +75,13 @@
                 </ul>
               </div>
             </li>
-            <li class="bold"><a class="collapsible-header  waves-effect waves-teal">JavaScript</a>
+            <li class="bold"><a class="collapsible-header active waves-effect waves-teal">JavaScript</a>
               <div class="collapsible-body">
                 <ul>
                   <li><a href="collapsible.html">Collapsible</a></li>
                   <li><a href="dialogs.html">Dialogs</a></li>
                   <li><a href="dropdown.html">Dropdown</a></li>
-                  <li><a href="media.html">Media</a></li>
+                  <li class="active"><a href="media.html">Media</a></li>
                   <li><a href="modals.html">Modals</a></li>
                   <li><a href="parallax.html">Parallax</a></li>
                   <li><a href="pushpin.html">Pushpin</a></li>
@@ -95,90 +100,189 @@
         <li class="bold"><a href="showcase.html" class="waves-effect waves-teal">Showcase</a></li>
       </ul>
     </header>
-    <main>
-      <div class="section no-pad-bot" id="index-banner">
-        <div class="container">
-          <h1 class="header center-on-small-only">Materialize</h1>
-          <div class='row center'>
-            <h4 class ="header col s12 light center">A modern responsive front-end framework based on Material Design</h4>
-          </div>
-          <div class="row center">
-            <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light">Get Started</a>
-          </div>
-          <div class="row center"><a class="red-text text-lighten-4" href="https://github.com/Dogfalo/materialize">alpha release v0.97.0</a></div>
+    <main><div class="container">
+  <div class="row">
+    <div class="col s12 m9 l10">
+      <p class="caption">Media components include things that have to do with large media objects like Images, Video, Audio, etc.</p>
 
-          <div class="buysellads-header row center">
-            <!-- CarbonAds Zone Code -->
-            <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=materializecss" id="_carbonads_js"></script>
-          </div>
-          <br>
+      <div id="materialbox" class="scrollspy section">
+        <h2 class="header">Material Box</h2>
+         <p class="caption">Material box is a material design implementation of the Lightbox plugin. When a user clicks on an image that can be enlarged. Material box centers the image and enlarges it in a smooth, non-jarring manner. To dismiss the image, the user can either click on the image again, scroll away, or press the ESC key.</p>
+        <img class="materialboxed responsive-img" width="650" src="images/sample-1.jpg">
 
-        </div>
-        <div class="github-commit">
-          <div class="container">
-            <div class="commit">
-              Latest Commit on Github:
-              &nbsp;&nbsp;
-              <a href="" class="sha"></a>
-              &nbsp;&nbsp;
-              <span class="date"></span>
-              <a id="github-button" href="https://github.com/Dogfalo/materialize" class="btn-flat right grey-text text-lighten-5 waves-effect waves-light hide-on-small-only">Github</a>
-            </div>
-          </div>
-        </div>
+       <p>Creating the above image with the effect is as simple as adding a <code class="language-markup">materialboxed</code> class to the image tag.</p>
+      <pre><code class="language-markup">
+    &lt;img class="materialboxed" width="650" src="images/sample-1.jpg">
+      </code></pre>
+
+
+      <h4>Initialization</h4>
+       <p>Materialbox is intialized automatically. However, if you add images dynamically, you will have to add this initialization code.</p>
+       <pre><code class="language-javascript">
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+        </code></pre>
+
+        <h4>Captions</h4>
+        <p>It is very easy to add a short caption to your photo. Just add the caption as a <code class="language-markup">data-caption</code> attribute.</p>
+        <img class="materialboxed" data-caption="A picture of some deer and tons of trees" width="250" src="http://th01.deviantart.net/fs70/PRE/i/2013/126/1/e/nature_portrait_by_pw_fotografie-d63tx0n.jpg">
+          <pre><code class="language-markup">
+  &lt;img class="materialboxed" data-caption="A picture of some deer and tons of trees" width="250" src="http://th01.deviantart.net/fs70/PRE/i/2013/126/1/e/nature_portrait_by_pw_fotografie-d63tx0n.jpg">
+          </code></pre>
       </div>
 
-      <div class="container">
-        <div class="section">
+      <br>
 
-          <div class="row">
-            <div class="col s12 m8 offset-m2">
-              <br>
-              <img id="responsive-img" src="images/responsive.png">
-            </div>
-          </div>
 
-          <div class="row">
-            <h3 class="col s12 light center header">Materialize simplifies life for developers and the users they serve.</h3>
-          </div>
+      <!--  Slider Section  -->
+      <div id="slider" class="scrollspy section">
+        <h3 class="header">Slider</h3>
+         <p class="caption">Our slider is a simple and elegant image carousel. You can also have captions that will be transitioned on their own depending on their alignment. You can also have indicators that show up on the bottom of the slider. </p>
+         <p>Note: This is also Hammer.js compatible! Try swiping with your finger to scroll through the slider.</p><br>
 
-          <!--   Promo Section   -->
-          <div class="row">
-            <div class="col s12 m4">
-              <div class="center promo">
-                <i class="material-icons">flash_on</i>
-                <p class="promo-caption">Speeds up development</p>
-                <p class="light center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+        <div class="slider">
+          <ul class="slides">
+            <li>
+              <img src="http://lorempixel.com/580/250/nature/1"> <!-- random image -->
+              <div class="caption center-align">
+                <h3>This is our big Tagline!</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
               </div>
-            </div>
-
-            <div class="col s12 m4">
-              <div class="center promo">
-                <i class="material-icons">group</i>
-                <p class="promo-caption">User Experience Focused</p>
-                <p class="light center">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+            </li>
+            <li>
+              <img src="http://lorempixel.com/580/250/nature/2"> <!-- random image -->
+              <div class="caption left-align">
+                <h3>Left Aligned Caption</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
               </div>
-            </div>
-
-            <div class="col s12 m4">
-              <div class="center promo">
-                <i class="material-icons">settings</i>
-                <p class="promo-caption">Easy to work with</p>
-                <p class="light center">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+            </li>
+            <li>
+              <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
+              <div class="caption right-align">
+                <h3>Right Aligned Caption</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
               </div>
-            </div>
-          </div>
+            </li>
+            <li>
+              <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
+              <div class="caption center-align">
+                <h3>This is our big Tagline!</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+              </div>
+            </li>
+          </ul>
+        </div><br>
 
+      <pre><code class="language-markup">
+  &lt;div class="slider">
+    &lt;ul class="slides">
+      &lt;li>
+        &lt;img src="http://lorempixel.com/580/250/nature/1"> &lt;!-- random image -->
+        &lt;div class="caption center-align">
+          &lt;h3>This is our big Tagline!&lt;/h3>
+          &lt;h5 class="light grey-text text-lighten-3">Here's our small slogan.&lt;/h5>
+        &lt;/div>
+      &lt;/li>
+      &lt;li>
+        &lt;img src="http://lorempixel.com/580/250/nature/2"> &lt;!-- random image -->
+        &lt;div class="caption left-align">
+          &lt;h3>Left Aligned Caption&lt;/h3>
+          &lt;h5 class="light grey-text text-lighten-3">Here's our small slogan.&lt;/h5>
+        &lt;/div>
+      &lt;/li>
+      &lt;li>
+        &lt;img src="http://lorempixel.com/580/250/nature/3"> &lt;!-- random image -->
+        &lt;div class="caption right-align">
+          &lt;h3>Right Aligned Caption&lt;/h3>
+          &lt;h5 class="light grey-text text-lighten-3">Here's our small slogan.&lt;/h5>
+        &lt;/div>
+      &lt;/li>
+      &lt;li>
+        &lt;img src="http://lorempixel.com/580/250/nature/4"> &lt;!-- random image -->
+        &lt;div class="caption center-align">
+          &lt;h3>This is our big Tagline!&lt;/h3>
+          &lt;h5 class="light grey-text text-lighten-3">Here's our small slogan.&lt;/h5>
+        &lt;/div>
+      &lt;/li>
+    &lt;/ul>
+  &lt;/div>
+      </code></pre>
+
+      <br>
+      <h4>Fullscreen Slider</h4>
+      <p>You can easliy make this slider a fullscreen slider by adding the class <code class="language-markup">fullscreen</code> to the slider div. Here's a quick demo.</p>
+      <a href="fullscreen-slider-demo.html" target="_blank" class="btn-large waves-effect waves-light">Open Demo</a>
+
+      <br>
+      <h4>jQuery Initialization</h4>
+       <pre><code class="language-javascript">
+    $(document).ready(function(){
+      $('.slider').slider({full_width: true});
+    });
+        </code></pre>
+        <br>
+
+        <h4>jQuery Plugin Options</h4>
+        <table class="hoverable">
+          <thead>
+            <tr>
+                <th>Option Name</th>
+                <th>Description</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Indicators</td>
+              <td>Set to false to hide slide indicators. (Default: True)</td>
+            </tr>
+            <tr>
+              <td>Height</td>
+              <td>Set height of slider. (Default: 400)</td>
+            </tr>
+            <tr>
+              <td>Transition</td>
+              <td>Set the duration of the transition animation in ms. (Default: 500)</td>
+            </tr>
+            <tr>
+              <td>Interval</td>
+              <td>Set the duration between transitions in ms. (Default: 6000)</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+
+      <h4>jQuery Plugin Methods</h4>
+      <p>We have methods to show and hide your sidebar you can use to programmatically control your sidebar.</p>
+      <pre><code class="language-javascript col s12">
+// Pause slider
+$('.slider').slider('pause');
+// Start slider
+$('.slider').slider('start');
+      </code></pre>
+      </div>
+
+    </div>
+
+
+    <!-- Table of Contents -->
+    <div class="col hide-on-small-only m3 l2">
+      <div class="toc-wrapper">
+        <div class="buysellads hide-on-small-only">
+           
         </div>
-        <div class="divider"></div>
-        <div class="section">
-          <div class="row center">
-            <h3 class="light header">Materialize Showcase</h3>
-            <p class="col s8 offset-s2 caption">Checkout what people are creating with Materialize. Get inspired by these beautiful sites and you can even submit your own website to be showcased here.</p>
-            <a href="http://materializecss.com/showcase.html" class="btn-large waves-effect waves-light">Explore our Showcase</a>
-          </div>
+        <div style="height: 1px;">
+          <ul class="section table-of-contents">
+            <li><a href="#materialbox">Material Box</a></li>
+            <li><a href="#slider">Slider</a></li>
+          </ul>
         </div>
       </div>
+    </div>
+
+  </div>
+</div>
 
 
     </main>    <footer class="page-footer">
